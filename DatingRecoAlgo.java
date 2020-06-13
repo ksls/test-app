@@ -108,8 +108,8 @@ public void addUser(Person person){
 			@Override
 			public int compare(Person p1, Person p2) {
 				
-				int agediff1 = p1.getAge() - person.getAge();
-				int agediff2 = p2.getAge() - person.getAge();
+				int agediff1 = Math.abs(p1.getAge() - person.getAge());
+				int agediff2 = Math.abs(p2.getAge() - person.getAge());
 				
 				String [] p1intlist = new String[0];
 				String [] p2intlist = new String[0];	
@@ -158,12 +158,12 @@ public void addUser(Person person){
 					
 					return 0;
 					
-					
+			 
 					
 				}else if(agediff2> agediff1){
-					return 1;
+					return -1;
 				}
-				return -1;
+				return 1;
 			}
 		});
 		
